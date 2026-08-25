@@ -54,6 +54,10 @@ app.get('/', (req: Request, res: Response) => {
     res.redirect('/produtos');
 });
 
+app.get('/produtos', (req: Request, res: Response) => {
+  res.json(produtos);
+});
+
 app.get('/produtos/:id', (req: Request, res: Response) => {
     const id = +req.params.id; //pega o parâmetro
     if (produtos && produtos.length > 0){
