@@ -59,12 +59,13 @@ app.get('/produtos', (req: Request, res: Response) => {
 });
 
 app.get('/produtos/:id', (req: Request, res: Response) => {
-    const id = +req.params.id; //pega o parâmetro
-    if (produtos && produtos.length > 0){
-        const prod = produtos.find(p => p.id === id);
-        res.json(prod);
-    }
-    res.json([]);
+  const id = +req.params.id; //Pega o parâmetro
+  if (produtos && produtos.length > 0) {
+    const prod = produtos.find(p => p.id === id);
+    res.json(prod);
+  } else {
+    res.send(undefined);
+  }
 });
 
 app.listen(3000, () => {
