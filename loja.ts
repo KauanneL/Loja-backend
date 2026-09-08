@@ -1,6 +1,8 @@
 import express, {type Express, type Request, type Response} from 'express';
+import cors from 'cors';
 
 const app: Express = express();
+app.use(cors());
 
 const produtos = [
   {
@@ -59,13 +61,14 @@ app.get('/produtos', (req: Request, res: Response) => {
 });
 
 app.get('/produtos/:id', (req: Request, res: Response) => {
-  const id = +req.params.id; //Pega o parâmetro
-  if (produtos && produtos.length > 0) {
-    const prod = produtos.find(p => p.id === id);
-    res.json(prod);
-  } else {
-    res.send(undefined);
+  const id = +req.params.id;
+
+  if (produtos && produtos.length > 0){
+      const prod = produtos.find(p => p.id === id);
+      res.json(prod);
   }
+
+  res.json([]);
 });
 
 app.listen(3000, () => {
