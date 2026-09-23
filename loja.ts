@@ -29,7 +29,7 @@ const produtos = [
     "marca": "Sony",
     "descrição": "Fone de ouvido sem fio com conexão Bluetooth e bateria de longa duração.",
     "preço": 249.90,
-    "foto": "https://m.media-amazon.com/images/I/51olNZRjn+L._AC_SX425_.jpgs",
+    "foto": "https://http2.mlstatic.com/D_Q_NP_606503-MLA100030037037_122025-B.webp",
     "quantidade": 25
   },
   {
